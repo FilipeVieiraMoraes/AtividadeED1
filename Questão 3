@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void decimalParaBinario(int decimal) {
+    int bin[64], i = 0;
+    while (decimal > 0) {
+        bin[i++] = decimal % 2;
+        decimal /= 2;
+    }
+    for (int j = i - 1; j >= 0; j--) {
+        printf("%d", bin[j]);
+    }
+}
+
+int main() {
+    char *h1 = "7CD";
+    char *h2 = "9873";
+    char *h3 = "2F5AB";
+
+    int d1 = (int)strtol(h1, NULL, 16);
+    int d2 = (int)strtol(h2, NULL, 16);
+    int d3 = (int)strtol(h3, NULL, 16);
+
+    printf("Questão 3:\n");
+
+    printf("a. Hexadecimal: %s -> Decimal: %d -> Binário: ", h1, d1);
+    decimalParaBinario(d1);
+    printf("\n");
+
+    printf("b. Hexadecimal: %s -> Decimal: %d -> Binário: ", h2, d2);
+    decimalParaBinario(d2);
+    printf("\n");
+
+    printf("c. Hexadecimal: %s -> Decimal: %d -> Binário: ", h3, d3);
+    decimalParaBinario(d3);
+    printf("\n");
+
+    return 0;
+}
